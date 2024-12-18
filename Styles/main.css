@@ -1,0 +1,270 @@
+:root {
+    --principal: #8b7765;
+    --oscuro: #54443f;
+    --claro: #cec5ba;
+    --text: #29201f;
+    --card: #b1a593;
+    --titulo: font-family: "Archivo", serif;
+    --contraste: #5b9bd5;
+    --contrasteOsc: #5b81d5;
+}
+
+* {
+    font-family: "Chivo", serif;
+    margin: 0;
+}
+
+/*Variables globales*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--claro);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--text);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+    color: var(--contraste);
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.6);
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 1.5rem 0;
+}
+
+/*FOOTER*/
+.footer {
+    background-color: var(--oscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text {
+    text-align: center;
+    color: var(--claro);
+}
+
+/*Barra de navegacion*/
+.navBar {
+    background-color: var(--oscuro);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 3rem;
+}
+
+.nav__enlace {
+    color: var(--claro);
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+.nav__enlace--active,
+.nav__enlace:hover {
+    color: var(--oscuro);
+    background-color: var(--claro);
+    border-radius: 0.5rem;
+}
+
+/*GRID*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*Productos*/
+.product {
+    background-color: var(--card);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.product__image {
+    width: 100%;
+}
+
+.product__description {
+    font-size: 4rem;
+}
+
+.product__price {
+    font-size: 2.8rem;
+    color: var(--contraste);
+}
+
+.product__description,
+.product__price {
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/*GRAFICOS*/
+.grafico {
+    min-height: 30rem;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico__camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico__modelo {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9 ;
+}
+
+@media screen and (min-width:768px) {
+    .grafico__modelo {
+        grid-row: 5 /6 ;
+        grid-column: 2 / 4;
+    }
+}
+
+.nosotros {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+}
+.nosotros__info {
+    text-align: justify;
+}
+.nosotros__image {
+    grid-row: 1 / 2;
+    width: 100%;
+}
+
+.bloques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloques__titulo {
+    margin: 0;
+}
+
+.bloque__image {
+    width: 100%;
+}
+
+@media screen and (min-width:768px){
+    .nosotros{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nosotros__image {
+        grid-column: 2 / 3 ;
+    }
+
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*PAGINA DE PRODUCTO*/
+@media screen and (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+.form__campo {
+    border: 1rem solid var(--principal);
+    background-color: transparent;
+    
+    padding: 1rem;
+    appearance: none;
+    border-radius: 0.5rem;
+}
+.form__image {
+    width: 100%;
+}
+.form__submit {
+    background-color: var(--contraste);
+    border: none;
+    font-size: 2rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+    grid-column: 1 / 3;
+}
+.form__submit:hover {
+    cursor: pointer;
+    background-color: var(--contrasteOsc);
+}
+.camisa__content p {
+    text-align: justify;
+}
